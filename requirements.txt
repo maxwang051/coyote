@@ -6,7 +6,7 @@ modulegraph==0.10.4
 Pillow==3.0.0
 poster==0.8.1
 py2app==0.7.3
-
+gunicorn
 pyOpenSSL==0.13.1
 pyparsing==2.0.1
 python-dateutil==1.5
