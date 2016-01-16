@@ -22,9 +22,9 @@ def choose_ingredients(request):
     return redirect('/recipes/list/%s' % ingredients)
 
 def recipe_list(request, ingredients):
-    ingredients = ingredients.split('+')
+    temp_ing = ingredients.split('+')
     search_string = ''
-    for ingredient in ingredients:
+    for ingredient in temp_ing:
         search_string += ingredient + "%2C"
 
     search_string = search_string[:-6]
@@ -39,19 +39,28 @@ def recipe_list(request, ingredients):
 
     context = {
         'recipes': response,
+        'ingredients': ingredients,
     }
 
     return render(request, 'recipes_list.html', context)
 
-def detail_view(request, recipe_id):
-    response = unirest.get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/+" + recipe_id + "/information",
+def detail_view(request, recipe_id, ingredients):
+    ingredients = ingredients.split('+')
+
+    response = unirest.get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/" + recipe_id + "/information",
       headers={
         "X-Mashape-Key": "QN5CLcAiQXmshOrib4vl7QifQAPjp1MjXoijsnsKdgztp93FnI"
       }
     )
 
+    recipe = unirest.get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/extract?forceExtraction=false&url=http%3A%2F%2F" + response.body['sourceUrl'][7:].replace("/", "%2F") + "",
+      headers={
+        "X-Mashape-Key": "QN5CLcAiQXmshOrib4vl7QifQAPjp1MjXoijsnsKdgztp93FnI"
+      }
+    )
     context = {
-        'recipe': response.body
+        'recipe': response.body,
+        'directions': recipe.body
     }
 
     return render(request, 'recipe_detail.html', context)

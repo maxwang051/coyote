@@ -1,0 +1,17 @@
+@import url('http://fonts.googleapis.com/css?family=Oswald:700,400,300');
+
+#heading {
+  font-family: "Oswald";
+}
+.post-content {
+    background: none repeat scroll 0 0 #FFFFFF;
+    bottom: 0;
+    margin: 0 auto;
+    position: absolute;
+}
+
+.thumbnail{
+    position:relative;
+    opacity: 0.8;
+
+}

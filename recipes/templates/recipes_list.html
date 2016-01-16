@@ -1,13 +1,40 @@
 
-{% for recipe in recipes.body %}
-<img src="{{ recipe.image }}" alt="" />
-<p>
-  <a href="{% url 'detail' recipe.id %}">{{ recipe.title }}</a>
-</p>
-{% endfor %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Coyote</title>
+  <link rel = "stylesheet" type = "text/css" href = "searchv2style.css" />
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700,400,300' rel='stylesheet' type='text/css'>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
 
-<p>
-  {{ ingredients }}
-</p>
+<div class="container">
+  <div id="heading">
+    <h1>Recipes Found</h1>
+  </div>
 
-<a href="{% url 'choose_ingredients' %}">Pick Ingredients</a>
+  <input type="button" class="btn btn-default" value="Search Again" onclick="window.location.href='{% url 'choose_ingredients' %}'">
+  <br> <br>
+  <div class ="thumbnail">
+
+    {% for recipe in recipes.body %}
+    <img src="{{ recipe.image }}" class="img-rounded" alt="" />
+    <div class="caption post-content">
+      <p>
+        <a href="{% url 'detail' recipe.id ingredients %}">{{ recipe.title }}</a>
+      </p>
+    </div>
+    {% endfor %}
+  </div>
+  <p>
+    {{ ingredients }}
+  </p>
+</div>
+
+</body>
+</html>
