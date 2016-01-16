@@ -1,1 +1,1 @@
-web: gunicorn coyote.wsgi --log-file -
+web: gunicorn coyote.wsgi 
