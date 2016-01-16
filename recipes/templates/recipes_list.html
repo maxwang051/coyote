@@ -1,0 +1,11 @@
+
+{% for recipe in recipes.body %}
+<img src="{{ recipe.image }}" alt="" />
+<p>
+  <a href="{% url 'detail' recipe.id %}">{{ recipe.title }}</a>
+</p>
+{% endfor %}
+
+<p>
+  {{ ingredients }}
+</p>
