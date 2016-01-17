@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+import os.path
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,14 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '2hw@+-d*i312#m@ad71r)1q)c8=r-!auqcn9s$8@7%h=mazo!h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
-SESSION_COOKIE_DOMAIN = '.coyoteee.xyz'
-SESSION_SAVE_EVERY_REQUEST = True
-SESSION_EXPIRE_AT_BROWSER_CLOSE = False
-
 
 # Application definition
 
@@ -61,6 +57,13 @@ MIDDLEWARE_CLASSES = [
 
 ROOT_URLCONF = 'coyote.urls'
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = 'staticfiles'
+STATIC_URL = '/recipes/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, '/recipes/static'),
+)
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
