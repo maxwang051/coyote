@@ -69,6 +69,7 @@ class IngredientForm(forms.Form):
         ('salt', 'Salt'),
         ('pepper', 'Pepper'),
         ('sugar', 'Sugar'),
+        ('butter', 'Butter'),
         ('mayonnaise', 'Mayonnaise'),
         ('cayenne', 'Cayenne'),
         ('paprika', 'Paprika'),
@@ -91,3 +92,6 @@ class IngredientForm(forms.Form):
     )
 
     picked = forms.MultipleChoiceField(choices=CHOICES, widget=forms.CheckboxSelectMultiple())
+
+class NumberForm(forms.Form):
+    number = forms.CharField(max_length=20)

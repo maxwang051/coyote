@@ -62,3 +62,12 @@
 .checkbox-custom:focus + .checkbox-custom-label {
   outline: 1px solid #ddd; /* focus style */
 }
+.button-black.button-outline {
+    color: #d73f49;
+    font-family: 'Oswald';
+    border-color: #d73f49;
+    font-size: 1.7rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    padding: 0 5rem;
+}
