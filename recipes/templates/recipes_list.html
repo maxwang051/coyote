@@ -14,22 +14,6 @@
 <body>
 
 <div class="container">
-  <h5>Ingredients Chosen: <br></h5>
-  <script>
-  	var ingr = {{ ingredients }}
-  	var ingrlen = ingr.length
-  	for (var i = 0; i < ingrlen; i++) {
-  		if (ingr[i] != "+"){
-  			//printingr += ingr[i];
-  			document.write(ingr[i])
-  		}
-  		else{
-  			if (i != (ingrlen-1)){
-  				document.write(", ");
-  			}
-  		}
-  	}
-  </script>
 
   <div id="heading">
     <h1>Recipes Found</h1>
@@ -37,12 +21,11 @@
 
   <input type="button" class="btn btn-default" value="Search Again" onclick="window.location.href='{% url 'choose_ingredients' %}'">
   <br> <br>
-  <div class ="thumbnail">
-
+  <div>
     {% for recipe in recipes.body %}
     <div class= "figure">
-      <img src="{{ recipe.image }}" class="img-rounded" alt="" />
-      <div class="caption" style = "display:table-caption;caption-side:bottom;"><h2><a href="{% url 'detail' recipe.id ingredients %}">{{ recipe.title }}</a></h2><div>
+      <a href="{% url 'detail' recipe.id ingredients %}"><img src="{{ recipe.image }}" class="img-rounded" alt="" /></a>
+      <div class="caption"><h2><a style="color:black; font-size:25px;" href="{% url 'detail' recipe.id ingredients %}">{{ recipe.title }}</a></h2><div>
     </div>
     {% endfor %}
   </div>
