@@ -2,16 +2,30 @@
 
 #heading {
   font-family: "Oswald";
+  text-align: center;
+}
+
+#button{
+  margin-top: 20px;
+  text-align: center;
 }
 .post-content {
-    background: none repeat scroll 0 0 #FFFFFF;
-    bottom: 0;
-    margin: 0 auto;
+    font-family: "Oswald";
+    font-size: 15;
+    color: #FFFFFF;
+    background-color: #808080;
+    height: 70px;
+    bottom: 1em;
+    width: 200px;
     position: absolute;
+    opacity: 0.7;
 }
 
 .thumbnail{
+    text-align:center;
+    margin: 0px auto 0px auto;
+    text-align: center;
     position:relative;
-    opacity: 0.8;
-
+    max-width: 400px;
+    float: left;
 }

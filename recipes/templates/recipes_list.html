@@ -14,6 +14,23 @@
 <body>
 
 <div class="container">
+  <h5>Ingredients Chosen: <br></h5>
+  <script>
+  	var ingr = {{ ingredients }}
+  	var ingrlen = ingr.length
+  	for (var i = 0; i < ingrlen; i++) {
+  		if (ingr[i] != "+"){
+  			//printingr += ingr[i];
+  			document.write(ingr[i])
+  		}
+  		else{
+  			if (i != (ingrlen-1)){
+  				document.write(", ");
+  			}
+  		}
+  	}
+  </script>
+
   <div id="heading">
     <h1>Recipes Found</h1>
   </div>
@@ -31,9 +48,7 @@
     </div>
     {% endfor %}
   </div>
-  <p>
-    {{ ingredients }}
-  </p>
+
 </div>
 
 </body>
