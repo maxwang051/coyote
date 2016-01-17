@@ -1,0 +1,61 @@
+@import url(http://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css);
+@import url('http://fonts.googleapis.com/css?family=Oswald');
+
+#content {
+  background-color: #FFF;
+}
+#heading {
+  font-size: 20;
+  margin: 50px;
+  font-family: "Oswald";
+  margin-bottom: 10px;
+}
+
+#button{
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+#options {
+  margin-left: 50px;
+}
+.checkbox-custom {
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox-custom, .checkbox-custom-label {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.checkbox-custom-label {
+    position: relative;
+}
+
+.checkbox-custom + .checkbox-custom-label:before {
+    content: '';
+    background: #FFF;
+    border: 2px solid #ddd;
+    display: inline-block;
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+    padding: 2px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.checkbox-custom:checked + .checkbox-custom-label:before {
+    content: "\f00c";
+    font-family: 'FontAwesome';
+    background: #D73F49;
+    color: #FFF;
+}
+
+
+.checkbox-custom:focus + .checkbox-custom-label {
+  outline: 1px solid #ddd; /* focus style */
+}
