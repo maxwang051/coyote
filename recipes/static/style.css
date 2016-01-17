@@ -1,0 +1,44 @@
+#Banner {
+  font-size:600%;
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+  color: #d73f49;
+  margin-top: 9%;
+}
+#sidenote {
+  font-size: 300%;
+  text-align: center;
+  color: #d73f49;
+  font-family: 'Oswald';
+  margin-bottom: 2.5%
+}
+
+body{
+  background: #faebd7 !important;
+}
+
+div {
+  width:70%;
+  height:300%;
+  margin: auto;
+}
+
+button{
+  margin: auto;
+}
+
+form{
+  margin: auto;
+  width: 8%;
+  color: #d73f49;
+}
+
+.button-black.button-outline {
+    color: #d73f49;
+    font-family: 'Oswald';
+    border-color: #d73f49;
+    font-size: 1.7rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    padding: 0 5rem;
+}

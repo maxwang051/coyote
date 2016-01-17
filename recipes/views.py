@@ -14,7 +14,7 @@ client = TwilioRestClient(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
 
 def home_page(request):
 
-    return HttpResponse('<h1>Home Page</h1>')
+    return render(request, 'index.html')
 
 def choose_ingredients(request):
     if request.method == 'POST':
@@ -67,6 +67,7 @@ def detail_view(request, recipe_id, ingredients):
     for ingredient in response.body["extendedIngredients"]:
         needed.append(ingredient["name"])
 
+    global missing
     missing = list(set(needed) - set(ingredients))
 
     recipe = unirest.get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/extract?forceExtraction=false&url=http%3A%2F%2F" + response.body['sourceUrl'][7:].replace("/", "%2F") + "",
@@ -83,10 +84,8 @@ def detail_view(request, recipe_id, ingredients):
 
 @csrf_exempt
 def sms(request):
-    list_ = request.session['missing']
 
-    print(list_)
-    text = ("\n").join(list_)
+    text = ("\n").join([ing[:1].upper() + ing[1:] for ing in missing])
 
     client.messages.create(
     	to="8328593364",
