@@ -10,11 +10,14 @@
   text-align: center;
   color: #d73f49;
   font-family: 'Oswald';
-  margin-bottom: 2.5%
+  margin-top:1%;
 }
 
 body{
   background: #faebd7 !important;
+  position: fixed;
+  right: 0;
+  left: 0;
 }
 
 div {
@@ -24,7 +27,9 @@ div {
 }
 
 button{
-  margin: auto;
+  right: 0;
+  left: 0;
+  margin-top:50%
 }
 
 form{

@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '2hw@+-d*i312#m@ad71r)1q)c8=r-!auqcn9s$8@7%h=mazo!h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -59,7 +59,11 @@ ROOT_URLCONF = 'coyote.urls'
 
 STATIC_ROOT = ''
 STATIC_URL = "/static/"
-STATICFILES_DIRS = ( os.path.join('static'), )
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)
 
 TEMPLATES = [
     {
