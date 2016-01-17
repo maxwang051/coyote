@@ -26,6 +26,6 @@ urlpatterns = [
     url(r'^$', recipes_views.home_page, name='home'),
     url(r'^recipes/', include(recipes_urls)),
 ]
-urlpatterns += patterns('',
-    (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': '/home/path_to/static'}),
-)
+
+if settings.DEBUG:
+   urlpatterns += staticfiles_urlpatterns() 
