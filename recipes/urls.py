@@ -1,7 +1,9 @@
-from django.conf.urls import url
+from django.conf.urls import url, patterns, include
 from django.contrib import admin
 
 from recipes import views
+
+admin.autodiscover()
 
 urlpatterns = [
     url(r'^list/(?P<ingredients>.+?)/$', views.recipe_list, name='recipe_list'),
