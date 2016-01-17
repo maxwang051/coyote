@@ -10,7 +10,7 @@ from twilio.twiml import Response
 TWILIO_ACCOUNT_SID = "AC0efcecadadf271dda76f44c41111e345"
 TWILIO_AUTH_TOKEN = "234321480deab317429df46b3c073a4b"
 
-client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
+client = TwilioRestClient(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
 
 
 def home_page(request):
@@ -84,10 +84,12 @@ def detail_view(request, recipe_id, ingredients):
 
     return render(request, 'recipe_detail.html', context)
 
-@twilio_view
+@csrf_exempt
 def sms(request):
     client.messages.create(
     	to="8328593364",
     	from_="+15107688052",
     	body="HELLO",
     )
+
+    return HttpResponse('<h1>testing!!</h1>')
