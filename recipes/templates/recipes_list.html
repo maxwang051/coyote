@@ -17,20 +17,19 @@
 <div class="container">
 
   <div id="heading">
-    <h1>Recipes Found</h1>
+    <h1 style="color: #d73f49;">Recipes Found</h1>
   </div>
 
   <div id="button">
-  <span>
-    <form action="{% url 'choose_ingredients' %}">
-    <button id="again" class="button-outline button-black"><strong>GET WILD AGAIN</strong></button>
+    <span>
+      <form action="{% url 'choose_ingredients' %}">
+      <button class="button-outline button-black"><strong>GET WILD AGAIN</strong></button>
     </form>
   </span>
 </div>
 
 
   <!--<div id="button">
->>>>>>> 4ad1a9b134381cf43d5d3d2a34414fab622c5d1b
     <input type="button" class="btn btn-default" value="Search Again" onclick="window.location.href='{% url 'choose_ingredients' %}'">
   </div>
   <br> <br>

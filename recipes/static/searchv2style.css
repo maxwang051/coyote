@@ -12,6 +12,13 @@
   margin-top: 20px;
   width: 100%;
   text-align: center;
+  color: #d73f49;
+  font-family: 'Oswald';
+  border-color: #d73f49;
+  font-size: 1.7rem;
+  height: 4.5rem;
+  line-height: 4.5rem;
+  padding: 0 5rem;
 }
 
 img{
@@ -34,4 +41,13 @@ a{
 }
 .figure{
   text-align: center;
+}
+.button-black.button-outline {
+    color: #d73f49;
+    font-family: 'Oswald';
+    border-color: #d73f49;
+    font-size: 1.7rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    padding: 0 5rem;
 }
