@@ -20,8 +20,6 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from recipes import views as recipes_views
 from recipes import urls as recipes_urls
 
-from coyote import settings
-
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', recipes_views.home_page, name='home'),
