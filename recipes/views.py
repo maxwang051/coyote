@@ -68,10 +68,6 @@ def detail_view(request, recipe_id, ingredients):
         needed.append(ingredient["name"])
 
     missing = list(set(needed) - set(ingredients))
-    print missing
-
-    request.session['missing'] = missing
-    print request.session.items()
 
     recipe = unirest.get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/extract?forceExtraction=false&url=http%3A%2F%2F" + response.body['sourceUrl'][7:].replace("/", "%2F") + "",
       headers={
