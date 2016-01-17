@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'recipes',
+    'django_twilio',
 ]
 
 MIDDLEWARE_CLASSES = [
