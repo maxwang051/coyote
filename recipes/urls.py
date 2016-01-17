@@ -12,5 +12,6 @@ urlpatterns = [
     url(r'^ingredients/', views.choose_ingredients, name='choose_ingredients'),
     url(r'^message/$', 'django_twilio.views.message', {
         'message': 'Thanks for da SMS',
+        'to': '+18328593364',
     }),
 ]
