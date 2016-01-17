@@ -57,7 +57,10 @@ MIDDLEWARE_CLASSES = [
 
 ROOT_URLCONF = 'coyote.urls'
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+PROJECT_DIR = os.path.join(PROJECT_ROOT,'../recipes')
 STATIC_ROOT= os.path.join(PROJECT_DIR,'staticfiles/')
+STATIC_URL = '/static/'
+
 STATICFILES_DIRS = ()
 
 
