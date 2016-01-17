@@ -19,7 +19,9 @@
     <h1>Recipes Found</h1>
   </div>
 
-  <input type="button" class="btn btn-default" value="Search Again" onclick="window.location.href='{% url 'choose_ingredients' %}'">
+  <div id="button">
+    <input type="button" class="btn btn-default" value="Search Again" onclick="window.location.href='{% url 'choose_ingredients' %}'">
+  </div>
   <br> <br>
   <div>
     {% for recipe in recipes.body %}
