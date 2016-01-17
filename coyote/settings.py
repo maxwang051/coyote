@@ -27,6 +27,10 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
+SESSION_COOKIE_DOMAIN = 'http://43411a7c.ngrok.io'
+SESSION_SAVE_EVERY_REQUEST = True
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
+
 
 # Application definition
 
