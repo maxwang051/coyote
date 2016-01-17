@@ -25,6 +25,12 @@ SECRET_KEY = '2hw@+-d*i312#m@ad71r)1q)c8=r-!auqcn9s$8@7%h=mazo!h'
 TWILIO_ACCOUNT_SID = 'AC0efcecadadf271dda76f44c41111e345'
 TWILIO_AUTH_TOKEN = '234321480deab317429df46b3c073a4b'
 
+client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
+
+client.messages.create(
+	from_="+15107688052",
+)
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 

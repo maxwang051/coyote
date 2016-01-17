@@ -3,6 +3,14 @@ from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from recipes.forms import IngredientForm
 import unirest
+from twilio.rest import TwilioRestClient
+
+# put your own credentials here
+ACCOUNT_SID = "AC0efcecadadf271dda76f44c41111e345"
+AUTH_TOKEN = "234321480deab317429df46b3c073a4b"
+
+client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
+
 
 def home_page(request):
 
@@ -77,5 +85,8 @@ def detail_view(request, recipe_id, ingredients):
 
 @csrf_exempt
 def sms(request):
-    twiml = '<Response><Message>Hello there!!!!!!!</Message></Response>'
-    return HttpResponse(twiml, content_type='text/xml')
+    client.messages.create(
+    	to="8328593364",
+    	from_="+15107688052",
+    	body="HELLO",
+    )
