@@ -10,37 +10,24 @@
   text-align: center;
 }
 
-.figure{
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-
-}
-a {
-  font-family: "Oswald";
-}
-
-h2{
-  vertical-align:bottom;
-  position: absolute;
-  width: 100%;
-  top: 200px;
-  background: lightgrey;
-  padding: 5px;
-  opacity: 0.8
-}
-
-h2 span{
-  color: white;
-  font: bold 24px/45px Helvetica, Sans-Serif;
-  letter-spacing: -1px;
-  background: white;
-  /*background: rgb(0,0,0);
-  background: rgba(0,0,0,0.7);*/
-  padding: 10px;
+img{
+  margin-top: 50px;
+  text-align: center;
 }
 
 .caption{
   width:100%;
+  font-family: "Oswald";
+  text-align: center;
+}
+h2{
+  margin-top: -10px ;
+  color: black;
+}
+a{
+  color: black;
+  font-size: 10;
+}
+.figure{
+  text-align: center;
 }
