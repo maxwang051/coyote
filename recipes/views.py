@@ -5,7 +5,7 @@ from recipes.forms import IngredientForm
 import unirest
 from twilio.rest import TwilioRestClient
 from django_twilio.decorators import twilio_view
-
+from twilio.twiml import Response
 # put your own credentials here
 TWILIO_ACCOUNT_SID = "AC0efcecadadf271dda76f44c41111e345"
 TWILIO_AUTH_TOKEN = "234321480deab317429df46b3c073a4b"
@@ -86,7 +86,8 @@ def detail_view(request, recipe_id, ingredients):
 
 @twilio_view
 def sms(request):
-    client.send_message(
-    	'Hi there'
-    	8328593364,
+    client.messages.create(
+    	to="8328593364",
+    	from_="+15107688052",
+    	body="HELLO",
     )
