@@ -62,7 +62,7 @@ STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/../recipes/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, '/../recipes/static'),
 )
 TEMPLATES = [
     {
