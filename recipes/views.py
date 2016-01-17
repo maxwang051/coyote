@@ -84,6 +84,7 @@ def detail_view(request, recipe_id, ingredients):
 
 @csrf_exempt
 def sms(request):
+    print(missing)
     text = ("\n").join(missing)
 
     client.messages.create(
