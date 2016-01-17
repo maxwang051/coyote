@@ -4,6 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 from recipes.forms import IngredientForm
 import unirest
 from twilio.rest import TwilioRestClient
+from django_twilio.decorators import twilio_view
 
 # put your own credentials here
 ACCOUNT_SID = "AC0efcecadadf271dda76f44c41111e345"
@@ -83,7 +84,7 @@ def detail_view(request, recipe_id, ingredients):
 
     return render(request, 'recipe_detail.html', context)
 
-@csrf_exempt
+@twilio_view
 def sms(request):
     client.messages.create(
     	to="8328593364",
