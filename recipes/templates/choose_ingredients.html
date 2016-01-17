@@ -12,24 +12,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </head>
-  <body id = "content">
+  <body id = "content" style="background-color:#faebd7;">
     <div id="heading">
       <h1>Pick Ingredients</h1>
     </div>
     <br><br>
 
-    <form class = "" action="" method="post">
+    <form class = "" action="" method="post" style="margin: 0; padding: 0;">
       <div id = "options">
         {% csrf_token %}
-        <!--{{ form.as_p }}-->
         {% for key, value in form.CHOICES %}
-        <div>
-          <input id = "{{value}}"class="checkbox-custom" name="{{value}}" type="checkbox">
-          <label for="{{value}}" class="checkbox-custom-label">{{value}}</label>
+        <div style="display:inline; margin:10px 15px 10px 15px; max-width:80%;">
+          <input id="{{value}}" class="checkbox-custom" name="{{value}}" type="checkbox">
+          <label for="{{value}}" style="color:#d73f49;" class="checkbox-custom-label">{{value}}</label>
         </div>
         {% endfor %}
     </form>
-    <div id= "button">
+    <div id="button">
       <input type = "submit" class = "btn btn-default" value = "Submit">
     </div>
     <!--<form class="" action="" method="post">
