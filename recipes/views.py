@@ -7,7 +7,8 @@ from twilio.rest import TwilioRestClient
 from django_twilio.decorators import twilio_view
 
 # put your own credentials here
-
+TWILIO_ACCOUNT_SID = "AC0efcecadadf271dda76f44c41111e345"
+TWILIO_AUTH_TOKEN = "234321480deab317429df46b3c073a4b"
 
 client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
 
