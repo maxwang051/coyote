@@ -8,6 +8,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static "milligram.min.css" %}" type="text/css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
@@ -19,9 +20,20 @@
     <h1>Recipes Found</h1>
   </div>
 
-  <input type="button" class="btn btn-default" value="Search Again" onclick="window.location.href='{% url 'choose_ingredients' %}'">
+  <div id=button>
+  <span>
+    <form action="{% url 'choose_ingredients' %}">
+    <button id="again" class="button-outline button-black"><strong>GET WILD AGAIN</strong></button>
+    </form>
+  </span>
+</div>
+
+
+  <!--<div id="button">
+    <input type="button" class="btn btn-default" value="Search Again" onclick="window.location.href='{% url 'choose_ingredients' %}'">
+  </div>
   <br> <br>
-  <div>
+  <div>-->
     {% for recipe in recipes.body %}
     <div class= "figure">
       <a href="{% url 'detail' recipe.id ingredients %}"><img src="{{ recipe.image }}" class="img-rounded" alt="" /></a>

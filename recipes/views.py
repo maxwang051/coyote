@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-from recipes.forms import IngredientForm
+from recipes.forms import IngredientForm, NumberForm
 import unirest
 from twilio.rest import TwilioRestClient
 from django_twilio.decorators import twilio_view
@@ -54,8 +54,12 @@ def recipe_list(request, ingredients):
 
     return render(request, 'recipes_list.html', context)
 
+@csrf_exempt
 def detail_view(request, recipe_id, ingredients):
     ingredients = ingredients.split('+') # list of ingredients owned
+    ingredients = map(lambda x:x.lower(),ingredients)
+
+    print ingredients
 
     response = unirest.get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/" + recipe_id + "/information",
       headers={
@@ -68,8 +72,8 @@ def detail_view(request, recipe_id, ingredients):
     for ingredient in response.body["extendedIngredients"]:
         needed.append(ingredient["name"])
 
-    global missing
     missing = list(set(needed) - set(ingredients))
+    print missing
 
     recipe = unirest.get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/extract?forceExtraction=false&url=http%3A%2F%2F" + response.body['sourceUrl'][7:].replace("/", "%2F") + "",
       headers={
@@ -81,15 +85,15 @@ def detail_view(request, recipe_id, ingredients):
         'directions': recipe.body
     }
 
+    if request.method == 'POST':
+        form = NumberForm(request.POST)
+        number = form.data['number']
+        text = ("\n").join([ing[:1].upper() + ing[1:] for ing in missing])
+
+        client.messages.create(
+        	to=number,
+        	from_="+15107688052",
+        	body="You are missing these ingredients:\n" + text,
+        )
+
     return render(request, 'recipe_detail.html', context)
-
-@csrf_exempt
-def sms(request):
-
-    text = ("\n").join([ing[:1].upper() + ing[1:] for ing in missing])
-
-    client.messages.create(
-    	to="8328593364",
-    	from_="+15107688052",
-    	body="You are missing these ingredients:\n" + text,
-    )
