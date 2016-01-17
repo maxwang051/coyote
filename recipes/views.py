@@ -89,5 +89,5 @@ def sms(request):
     client.messages.create(
     	to="8328593364",
     	from_="+15107688052",
-    	body="Hello",
+    	body="Hello\nHello",
     )
