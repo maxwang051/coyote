@@ -87,8 +87,7 @@ def detail_view(request, recipe_id, ingredients):
 
 @csrf_exempt
 def sms(request):
-    print request.session.items()
-    list_ = ['bread', 'cheese']
+    list_ = request.session['missing']
 
     print(list_)
     text = ("\n").join(list_)
