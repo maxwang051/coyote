@@ -14,7 +14,7 @@ img {
   margin-left: 50px;
 }
 
-#directions {  
+#directions {
   margin-left: 10px;
   margin-right: 500px;
 }
@@ -25,4 +25,19 @@ img {
   margin-bottom: 10px;
   color: #D73F49;
   text-shadow: 2px #000;
+}
+
+#again {
+  margin-left: 10%;
+  margin-top: 1%;
+}
+
+.button-black.button-outline {
+    color: #d73f49;
+    font-family: 'Oswald';
+    border-color: #d73f49;
+    font-size: 1.7rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    padding: 0 5rem;
 }

@@ -9,14 +9,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static "milligram.min.css" %}" type="text/css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-</head>
 <body id= "content" style="background-color:#faebd7;">
 
   <div class="container" style="background-color:#faebd7;">
     <div id="heading">
       <h1>{{ recipe.title }}</h1>
+    </div>
+
+    <div>
+    <span>
+      <form action="{% url 'choose_ingredients' %}">
+      <button id="again" class="button-outline button-black"><strong>GET WILD AGAIN</strong></button>
+      </form>
+    </span>
     </div>
 
     <div id= "ingredients">
@@ -28,6 +36,14 @@
           </li>
           {% endfor %}
         </ul>
+
+    <form class="" action="" method="post">
+      {% csrf_token %}
+      <div id="list">
+        <input type="text" name="number" value="Phone Number">
+        <input type="submit" name="submit" value="Send Text">
+      </div>
+    </form>
     <div id = "directions">
       <h3>Directions</h3>
       <ol>

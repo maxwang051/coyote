@@ -36,7 +36,6 @@ class IngredientForm(forms.Form):
         ('cucumber', 'Cucumber'),
         ('bean', 'Bean'),
         ('okra', 'Okra'),
-        ('pumpkin', 'Pumpkin'),
         ('arugula', 'Arugula'),
         ('papaya', 'Papaya'),
         ('olive', 'Olive'),
