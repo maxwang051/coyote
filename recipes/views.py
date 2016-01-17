@@ -86,7 +86,7 @@ def detail_view(request, recipe_id, ingredients):
 
 @twilio_view
 def sms(request):
-    client.messages.create(
+    return client.messages.create(
     	to="8328593364",
     	from_="+15107688052",
     	body="HELLO",
