@@ -19,11 +19,12 @@ def home_page(request):
 def choose_ingredients(request):
     if request.method == 'POST':
         form = IngredientForm(request.POST)
-        if form.is_valid():
-            picked = form.cleaned_data.get('picked')
-            ingredients = ''
-            for ing in picked:
-                ingredients += ing + '+'
+
+        ingredients = ''
+        for key, value in form.data.items():
+            if value == 'on':
+                ingredients += key + '+'
+
     else:
         form = IngredientForm
         return render(request, 'choose_ingredients.html', {'form' : form})

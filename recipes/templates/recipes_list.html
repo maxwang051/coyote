@@ -1,9 +1,9 @@
-
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Coyote</title>
-  <link rel = "stylesheet" type = "text/css" href = "searchv2style.css" />
+  <link rel = "stylesheet" type = "text/css" href = "{% static "searchv2style.css" %}" />
   <link href='https://fonts.googleapis.com/css?family=Oswald:700,400,300' rel='stylesheet' type='text/css'>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,11 +40,9 @@
   <div class ="thumbnail">
 
     {% for recipe in recipes.body %}
-    <img src="{{ recipe.image }}" class="img-rounded" alt="" />
-    <div class="caption post-content">
-      <p>
-        <a href="{% url 'detail' recipe.id ingredients %}">{{ recipe.title }}</a>
-      </p>
+    <div class= "figure">
+      <img src="{{ recipe.image }}" class="img-rounded" alt="" />
+      <div class="caption" style = "display:table-caption;caption-side:bottom;"><h2><a href="{% url 'detail' recipe.id ingredients %}">{{ recipe.title }}</a></h2><div>
     </div>
     {% endfor %}
   </div>
