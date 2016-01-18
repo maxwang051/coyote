@@ -40,7 +40,7 @@ def recipe_list(request, ingredients):
     search_string = search_string[:-6]
     print(search_string)
 
-    response = unirest.get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?ingredients=" + search_string + "&number=10",
+    response = unirest.get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?ingredients=" + search_string + "limitLicense=false&number=10&ranking=2",
       headers={
         "X-Mashape-Key": "QN5CLcAiQXmshOrib4vl7QifQAPjp1MjXoijsnsKdgztp93FnI",
         "Accept": "application/json"
